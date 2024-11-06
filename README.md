@@ -16,7 +16,7 @@
 
 backscrub is licensed under the Apache License 2.0. See LICENSE file for details.
 
-## Building
+## Building (Debian)
 
 Install dependencies (`sudo apt install libopencv-dev build-essential v4l2loopback-dkms curl`).
 
@@ -27,6 +27,12 @@ This is okay, if you only want to download and build the code, however, for deve
 Use `cmake` to build the project: create a subfolder (e.g. `build`), change to that folder and run: `cmake .. && make -j $(nproc || echo 4)`.
 
 **Deprecated**: Another option to build everything is to run `make` in the root directory of the repository. While this will download and build all dependencies, it comes with a few drawbacks like missing support for XNNPACK. Also this might break with newer versions of Tensorflow Lite as upstream support for this option has been removed. Use at you own risk.
+
+## Building (Fedora)
+
+Install dependencies (`sudo dnf install opencv-devel cmake v4l2loopback akmod-v4l2loopback curl`).
+
+Use `./utils/backscrub.sh` to build the project: `./utils/backscrub.sh build`
 
 ## Usage
 
